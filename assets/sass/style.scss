@@ -1,5 +1,11 @@
 @import 'compass';
 
-.test {
-  -test: test;
-}
+/*
+  Normalize.
+*/
+@import 'third-party/normalize';
+
+/*
+  Layouts.
+*/
+@import 'layouts/homepage';
