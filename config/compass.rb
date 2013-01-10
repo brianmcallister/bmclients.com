@@ -1,5 +1,11 @@
 http_path   = '/'
-css_dir     = 'assets/css'
+
+if environment == :production
+  css_dir = 'dist/css'
+else
+  css_dir = 'assets/css'
+end
+
 sass_dir    = 'assets/sass'
 images_dir  = 'assets/img'
 
