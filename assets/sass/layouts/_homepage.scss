@@ -6,10 +6,55 @@
   Homepage layout.
 
 ---------------------------------- */
+$gray: #2a2a2a;
+
+body {
+  background: top center white image-url('background.jpg') no-repeat;
+  background-size: 150% auto;
+}
+
+/*
+  Global header.
+*/
+.global-header {
+  margin: 5% 0 0 0;
+}
+
+/*
+  Content container.
+*/
 .container {
-  width: 50%;
+  width: 80%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 80px auto;
   text-align: center;
   font: 13px insonsolata, monospace;
+  color: $gray;
+  text-shadow: 0 1px 1px rgba(white, .3);
+  
+  a {
+    color: $gray;
+  }
+}
+
+/*
+  Logo.
+*/
+.bmclients-logo {
+  @include replace-text-with-dimensions('logo.png');
+  
+  display: block;
+  margin: 0 auto;
+}
+
+/*
+  Horizontal divider.
+*/
+.divider {
+  width: 50%;
+  margin: 50px auto;
+  border: 0;
+  border-top: 1px solid rgba($gray, .1);
+  border-bottom: 1px solid rgba(white, .15);
+  outline: none;
 }
