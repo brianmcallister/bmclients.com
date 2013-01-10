@@ -1,7 +1,7 @@
 http_path   = '/'
 
 if environment == :production
-  css_dir = 'dist/css'
+  css_dir = 'dist/assets/css'
 else
   css_dir = 'assets/css'
 end

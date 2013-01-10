@@ -19,6 +19,5 @@ end
 
 desc 'Deploy the site.'
 task :deploy => ['compile'] do
-  system "echo #{DEPLOY_USER}"
-  system "rsync -avzP #{BUILD_DIR} #{DEPLOY_USER}@#{DEPLOY_SERVER}:#{DEPLOY_DIR}"
+  system "rsync -avzP #{BUILD_DIR}/ #{DEPLOY_USER}@#{DEPLOY_SERVER}:#{DEPLOY_DIR}/"
 end
