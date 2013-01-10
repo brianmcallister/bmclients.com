@@ -3,6 +3,7 @@
 
 # Sass
 .sass-cache
+assets/css
 
 # Deploy
 temp
