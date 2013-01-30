@@ -14,7 +14,6 @@ task :compile do
   
   # Compile the Sass
   system 'compass compile -e production --force'
-
 end
 
 desc 'Deploy the site.'
