@@ -26,15 +26,15 @@ body {
 .container {
   width: 80%;
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 30px auto 0 auto;
   text-align: center;
   font: 13px inconsolata, monospace;
   color: $gray;
   text-shadow: 0 1px 1px rgba(white, .3);
-  
-  a {
-    color: $gray;
-  }
+}
+
+a {
+  color: $gray;
 }
 
 /*
@@ -48,13 +48,58 @@ body {
 }
 
 /*
+  Button.
+*/
+.button {
+  @include inline-block;
+  @include border-radius(5px);
+
+  margin: 10px 0 0 0;
+  padding: 0 10px;
+  font: italic 900 28px brandon-grotesque, sans-serif;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background-color: black;
+  
+  &:hover {
+    @include animation(colors 1s infinite normal ease-out both);
+  }
+}
+
+$colors: aqua, blue, fuchsia, green, lime, maroon, navy, olive, purple, red, silver, teal, white, yellow;
+$segment: (100/length($colors)) + 1;
+
+@include keyframes(colors) {
+  $frame: 0;
+  
+  @each $color in $colors {
+    #{$frame + '%'} {
+      background-color: $color;
+    }
+
+    $frame: floor($frame + $segment);
+  }
+
+  100% {
+    background-color: nth($colors, 1);
+  }
+};
+
+/*
   Horizontal divider.
 */
 .divider {
   width: 50%;
-  margin: 50px auto;
+  margin: 30px auto;
   border: 0;
   border-top: 1px solid rgba($gray, .1);
   border-bottom: 1px solid rgba(white, .15);
   outline: none;
+}
+
+.spacer {
+  @extend .divider;
+  
+  border-color: transparent;
 }
